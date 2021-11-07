@@ -354,6 +354,8 @@ void doReadall (void)
 
   piBoardId (&model, &rev, &mem, &maker, &overVolted) ;
 
+    printf("Board type: %d", model);
+
   /**/ if ((model == PI_MODEL_A) || (model == PI_MODEL_B))
     abReadall (model, rev) ;
   else if ((model == PI_MODEL_BP) || (model == PI_MODEL_AP) ||
@@ -361,7 +363,7 @@ void doReadall (void)
 	(model == PI_MODEL_3AP)  ||
 	(model == PI_MODEL_3B)   || (model == PI_MODEL_3BP) ||
 	(model == PI_MODEL_4B)   || (model == PI_MODEL_400) ||
-	(model == PI_MODEL_ZERO) || (model == PI_MODEL_ZERO_W) || (model == PI_MODEL_CM4))
+	(model == PI_MODEL_ZERO) || (model == PI_MODEL_ZERO_W) || (model == PI_MODEL_CM4) || (model == PI_MODEL_ZERO_2_W))
     piPlusReadall (model) ;
   else if ((model == PI_MODEL_CM) || (model == PI_MODEL_CM3) || (model == PI_MODEL_CM3P) )
     allReadall () ;
