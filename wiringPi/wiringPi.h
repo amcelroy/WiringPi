@@ -105,6 +105,7 @@
 #define	PI_MODEL_4B 		17
 #define	PI_MODEL_400		19
 #define	PI_MODEL_CM4		20
+#define PI_MODEL_ZERO_2_W   18
 
 #define	PI_VERSION_1		0
 #define	PI_VERSION_1_1		1
@@ -116,7 +117,7 @@
 #define	PI_MAKER_EMBEST		2
 #define	PI_MAKER_UNKNOWN	3
 
-extern const char *piModelNames    [21] ;
+extern const char *piModelNames    [22] ;
 extern const char *piRevisionNames [16] ;
 extern const char *piMakerNames    [16] ;
 extern const int   piMemorySize    [ 8] ;

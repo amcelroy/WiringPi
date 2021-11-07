@@ -219,7 +219,7 @@ volatile unsigned int *_wiringPiTimerIrqRaw ;
 
 static volatile unsigned int piGpioBase = 0 ;
 
-const char *piModelNames [21] =
+const char *piModelNames [22] =
 {
   "Model A",	//  0
   "Model B",	//  1
@@ -242,6 +242,7 @@ const char *piModelNames [21] =
   "Unknown18",	// 18
   "Pi 400",	// 19
   "CM4",	// 20
+  "Pi Zero 2 W", //21
 } ;
 
 const char *piRevisionNames [16] =
@@ -1084,7 +1085,7 @@ void piBoardId (int *model, int *rev, int *mem, int *maker, int *warranty)
     else if (strcmp (c, "0015") == 0) { *model = PI_MODEL_AP ; *rev = PI_VERSION_1_1 ; *mem = 1 ; *maker = PI_MAKER_EMBEST  ; }
     else if (strcmp (c, "0018") == 0) { *model = PI_MODEL_AP ; *rev = PI_VERSION_1_1 ; *mem = 0 ; *maker = PI_MAKER_SONY    ; }
     else if (strcmp (c, "001b") == 0) { *model = PI_MODEL_AP ; *rev = PI_VERSION_1_1 ; *mem = 0 ; *maker = PI_MAKER_EGOMAN  ; }
-
+    else if (strcmp (c, "2120") == 0) { *model = PI_MODEL_ZERO_2_W; *rev = PI_VERSION_1_2; *mem = 1; *maker = PI_MAKER_SONY  ; }
     else                              { *model = 0           ; *rev = 0              ; *mem =   0 ; *maker = 0 ;               }
   }
 }
@@ -2307,7 +2308,7 @@ int wiringPiSetup (void)
     case PI_MODEL_A:	case PI_MODEL_B:
     case PI_MODEL_AP:	case PI_MODEL_BP:
     case PI_ALPHA:	case PI_MODEL_CM:
-    case PI_MODEL_ZERO:	case PI_MODEL_ZERO_W:
+    case PI_MODEL_ZERO:	case PI_MODEL_ZERO_W: case PI_MODEL_ZERO_2_W:
       piGpioBase = GPIO_PERI_BASE_OLD ;
       piGpioPupOffset = GPPUD ;
       break ;
